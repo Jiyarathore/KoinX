@@ -1,12 +1,6 @@
 .row{
     background-color: rgb(255, 255, 255);
-      /* cursor:pointer; */
-      
 }
-
-/* .row:hover {
-  background-color:  #ffffff
-} */
 
 .btns{
   width: 45%;
@@ -22,12 +16,12 @@
 @media(max-width:998px) {
   .btns{
     display: flex;
-    /* font-size: 1px; */
-    /* size: 1px; */
   }
   .head1{
     width: 100%;
     font-size: 1.8rem;
   }
-  
+  .btn{
+    height: 30px;
+  }
 }

@@ -2,14 +2,12 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { CryptoState } from '../ContextApi';
 import { CoinList } from "../apis/api";
-import { createTheme, LinearProgress, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Typography } from "@mui/material";
+import {  LinearProgress, Table, TableBody, TableCell, TableContainer, TableHead, TableRow, TextField, ThemeProvider, Typography } from "@mui/material";
 import { Container } from '@mui/system';
 import { useNavigate } from 'react-router-dom';
 import "./CoinsTable.css";
-import SearchIcon from '@mui/icons-material/Search';
 import { Pagination } from "@mui/lab";
 import Button from '@mui/material/Button';
-import uparrow from '../assets/uparrow.png';
 
 function NumberWithCommas(x) {
     return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
@@ -23,16 +21,11 @@ function CoinsTable() {
 
     const [loading, setLoading] = useState(false);
 
-    const [search, setSearch] = useState([]);
-
     const [currdata, setCurrdata] = useState(coins);
 
     const [page, setPage] = useState(1);
 
-    const navigate = useNavigate();
-
     const { currency, symbol } = CryptoState();
-    //destructing currency from CryptoState
 
     const fetchCoins = async () => {
         setLoading(true);
@@ -47,39 +40,11 @@ function CoinsTable() {
         fetchCoins();
     }, [currency]);
 
-    // const darkTheme = createTheme({
-    //     palette: {
-    //         primary: {
-    //             main: "#fff",
-    //         },
-    //         type: "dark",
-    //     },
-    // });
-
-
-    // const handleSearch = () => {
-    //     setCurrdata(coins.filter((coin) =>
-
-    //         coin.name.toLowerCase().includes(search) ||
-    //         coin.symbol.toLowerCase().includes(search)
-    //     ))
-    // }
-
-    //we will compare the input text by name as well as symbol 
-    //we will include handlesearch in TableBody so that we will get filtered coins
-
     return (
 
-        // <ThemeProvider theme={darkTheme}>
         <Container style={{ textAlign: "center" }}>
         <div className='head1'>
-
-            {/* <Typography
-                variant="h4"
-                style={{ marginRight: 700, marginBottom: 60, fontSize: "1.5rem", fontWeight: "540" }}
-            > */}
                 Top 100 Cryptocurrencies by Market Cap
-            {/* </Typography> */}
         </div>
             <div className='btns'>
 
@@ -94,7 +59,7 @@ function CoinsTable() {
                     variant="contained" >
                     Favorites
                 </Button>
-                <Button size="small"
+                <Button className='btn' size="small"
                     style={{
                         backgroundColor: "rgb(240, 240, 240)",
                         color: "blue",
@@ -105,7 +70,7 @@ function CoinsTable() {
                     variant="contained" >
                     CryptoCurrencies
                 </Button>
-                <Button size="small"
+                <Button className='btn' size="small"
                     style={{
                         backgroundColor: "rgb(240, 240, 240)",
                         color: "black",
@@ -116,7 +81,7 @@ function CoinsTable() {
                     variant="contained" >
                     DeFi
                 </Button>
-                <Button size="small"
+                <Button className='btn' size="small"
                     style={{
                         backgroundColor: "rgb(240, 240, 240)",
                         color: "black",
@@ -128,22 +93,7 @@ function CoinsTable() {
                     NFTs & Collectibles
                 </Button>
             </div>
-            {/* 
-                <TextField
-                    label={<><SearchIcon/>
-                    <span style={{fontSize:18, width:"200px", marginBottom:20}}>Search For a Crypto Currency</span></>}
-                    variant='outlined'
-                    sx={{ "& label": { color: "white"} }}
-                    style={{ marginBottom: 20, width: "100%", color: "white"}}
-                    InputProps={{ style: { color: "white",} }}
-                    onChange={(e) => {
-                        setSearch(e.target.value)
-                        handleSearch();
-                    }}
-                >
-
-                </TextField> */}
-
+           
             <TableContainer>
                 {
                     loading ? (
@@ -178,7 +128,6 @@ function CoinsTable() {
                                     //slice is used so let page=1 so on 1st page 0 to 10 coins will be shown and if page=2 then 10 to 20 coins on next page
                                     return (
                                         <TableRow
-                                            // onClick={() => navigate(`/coins/${row.id}`)}
                                             className="row"
                                             key={row.name}
                                         >
@@ -187,9 +136,6 @@ function CoinsTable() {
                                                 {row.market_cap_rank}
                                             </TableCell>
                                             <TableCell
-                                                // align='right'
-                                                // component="th"
-                                                // scope="row"
                                                 style={{
                                                     display: "flex",
                                                     gap: 15,
@@ -202,7 +148,6 @@ function CoinsTable() {
                                                     style={{ marginBottom: 10 }}
                                                 />
                                                 <div
-                                                // style={{ display: "flex", flexDirection: "row" }}
                                                 >
                                                     <span
                                                         style={{
@@ -235,16 +180,9 @@ function CoinsTable() {
                                                     fontWeight: 500,
 
                                                 }}>
-
-                                                {/* {profit}
-                                                 <img src={uparrow}/> */}
                                                 {profit && "+"}
                                                 {row.price_change_percentage_24h.toFixed(2)}%
                                             </TableCell>
-                                            {/* <TableCell  >
-                                                {row.price_change_percentage_7d_in_currency}
-                                            </TableCell> */}
-
                                             <TableCell
                                                 align='right'
                                                 style={{
@@ -277,7 +215,6 @@ function CoinsTable() {
                                                 {NumberWithCommas(row.circulating_supply.toString().slice(0, -3)
                                                 )}
                                                 {" "}BTC
-                                                {/* {row.circulating_supply} */}
                                             </TableCell>
                                         </TableRow>
                                     );
@@ -303,7 +240,6 @@ function CoinsTable() {
                 }}
             />
         </Container>
-        // </ThemeProvider>
     )
 }
 

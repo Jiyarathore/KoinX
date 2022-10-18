@@ -2,11 +2,9 @@
     flex: 1;
     color: rgb(0, 0, 0);
     cursor: pointer;
-    /* font-variant: small-caps; */
     font-weight:bold;
 }
 .logo{
-    /* border: 2px solid red; */
     width: 2rem;
     background-size: cover;
     height: 2rem;

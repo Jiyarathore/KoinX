@@ -3,10 +3,8 @@ import "./Carousel.css"
 import one from '../../assets/one.png'
 import two from '../../assets/two.png'
 import three from '../../assets/three.png'
-import AliceCarousel from "react-alice-carousel"
 
 function Carousel() {
-    // const items
   return (
    <>
     <div className='threebox flex'>
@@ -37,30 +35,6 @@ function Carousel() {
    </>
   )
 
-// const responsive = {
-//     0: {
-//         items: 2,
-//     },
-//     500: {
-//         items: 4,
-//     },
-// };
-
-// return (
-//     <div className='carousel'>
-//         <AliceCarousel
-//             mouseTracking
-//             infinite
-//             autoPlayInterval={1000}
-//             animationDuration={1500}
-//             disableButtonsControls
-//             disableDotsControls
-//             responsive={responsive}
-//             autoPlay
-//             items={Carousel}
-//         />
-//     </div>
-// )
 }
 export default Carousel
 
