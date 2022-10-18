@@ -1,15 +1,11 @@
-.slide{
-   /* background-image: url('../../assets/Cryptofinal_bg.png');  */
-   height: 250px;
-   /* height: 100%; */
+.slide{ 
+    height: 250px;
    display: flex;
-   background-size: cover;
-   background-repeat: no-repeat;
    flex-direction: column;
    justify-content: space-around;
 }
 
- .heading{
+ /* .heading{
     font-weight: bold;
     margin-top: -8px;
     display: flex;
@@ -24,4 +20,4 @@
     font-size: 20px;
     display: flex;
     justify-content: center;
- }
+ } */

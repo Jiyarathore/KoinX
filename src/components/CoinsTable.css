@@ -1,9 +1,33 @@
 .row{
-    background-color: black;
-      cursor:pointer;
+    background-color: rgb(255, 255, 255);
+      /* cursor:pointer; */
       
 }
 
-.row:hover {
-  background-color:  #131111
+/* .row:hover {
+  background-color:  #ffffff
+} */
+
+.btns{
+  width: 45%;
+  margin: -2rem 0rem 2rem 0rem;
+  padding-right: 1rem;
+}
+.head1{
+  font-size: 2rem;
+  height: 8rem;
+  margin-right: 40rem;
+}
+
+@media(max-width:998px) {
+  .btns{
+    display: flex;
+    /* font-size: 1px; */
+    /* size: 1px; */
+  }
+  .head1{
+    width: 100%;
+    font-size: 1.8rem;
+  }
+  
 }

@@ -9,7 +9,7 @@ const [symbol, setSymbol] = useState("₹");
 
     useEffect(() => {
         if (currency === "INR") setSymbol("₹");
-        else if (currency === "USD") setSymbol("$");
+         if (currency === "USD") setSymbol("$");
     }, [currency]);
 
     //useEffect does is that whenever our app or component is rendered it gonne run whatever is in our useEffect

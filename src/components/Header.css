@@ -5,3 +5,14 @@
     /* font-variant: small-caps; */
     font-weight:bold;
 }
+.logo{
+    /* border: 2px solid red; */
+    width: 2rem;
+    background-size: cover;
+    height: 2rem;
+}
+.logo img{
+    width: 2rem;
+    background-size: cover;
+    height: 2rem;
+}
